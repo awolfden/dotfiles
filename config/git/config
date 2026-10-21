@@ -1,0 +1,6 @@
+[user]
+    useConfigOnly = true
+
+[include]
+    # Identity and directory-specific work settings live outside this repository.
+    path = ~/.gitconfig-local

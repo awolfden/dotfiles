@@ -1,0 +1,38 @@
+PS1="%1~ $ "
+
+if [ -f ~/.zsh_aliases ]; then
+	. ~/.zsh_aliases
+fi
+
+# Keep PATH entries unique and initialize the installed Homebrew rbenv.
+typeset -U path PATH
+export PATH="/opt/homebrew/bin:$PATH"
+# User-local tools (including terminal-browser); keep PATH deduplicated.
+[[ -d "$HOME/.local/bin" ]] && path+=("$HOME/.local/bin")
+if command -v rbenv >/dev/null 2>&1; then
+	eval "$(rbenv init - zsh)"
+fi
+
+# The system .NET path file contains an unexpanded tilde.
+path=("${(@)path:#\~/.dotnet/tools}")
+[[ -d "$HOME/.dotnet/tools" ]] && path+=("$HOME/.dotnet/tools")
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+if [[ -r /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$HOME/.rbenv/shims:$HOME/.volta/bin:$PATH"
+
+# Share Herdr workspace names with Pi Watcher; /watch remains opt-in.
+export WATCHER_SPACE_IDENTITY=1
+
+# Trusted machine-local overrides, never stored in this repository.
+[[ -r "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"

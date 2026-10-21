@@ -1,0 +1,9 @@
+# Ghostty + Herdr pilot; Warp remains installed as a fallback.
+# Herdr is launched manually, not from every new terminal or at login.
+theme = Catppuccin Mocha
+font-size = 13
+copy-on-select = false
+desktop-notifications = true
+auto-update = off
+# Pi's documented Option-Backspace mapping.
+keybind = alt+backspace=text:\x1b\x7f

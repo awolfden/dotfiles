@@ -1,0 +1,68 @@
+# Pilot configuration for AeroSpace 0.21.3-Beta.
+# Physical arrangement is managed in macOS Displays: LG left, MacBook right,
+# bottom edges aligned. No macOS display settings are changed by this file.
+config-version = 2
+start-at-login = false
+auto-reload-config = false
+after-startup-command = []
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+automatically-unhide-macos-hidden-apps = false
+focus-follows-mouse.enabled = false
+on-focused-monitor-changed = []
+persistent-workspaces = ['1-Web', '2-Code', '3-Chat', '4-Design', '5-Other']
+key-mapping.preset = 'qwerty'
+
+gaps.inner.horizontal = 8
+gaps.inner.vertical = 8
+gaps.outer.left = 8
+gaps.outer.right = 8
+gaps.outer.top = 8
+gaps.outer.bottom = 8
+
+# Prefer the LG for larger work areas; fall back to the laptop when undocked.
+[workspace-to-monitor-force-assignment]
+'1-Web' = ['LG HDR 4K', 'built-in', 'main']
+'2-Code' = ['LG HDR 4K', 'built-in', 'main']
+'3-Chat' = ['built-in', 'main']
+'4-Design' = ['LG HDR 4K', 'built-in', 'main']
+'5-Other' = ['built-in', 'main']
+
+# Control + Option avoids most ordinary Option-character shortcuts.
+# Raycast remains responsible for launching, search, and clipboard history.
+[mode.main.binding]
+ctrl-alt-1 = 'workspace 1-Web'
+ctrl-alt-2 = 'workspace 2-Code'
+ctrl-alt-3 = 'workspace 3-Chat'
+ctrl-alt-4 = 'workspace 4-Design'
+ctrl-alt-5 = 'workspace 5-Other'
+ctrl-alt-shift-1 = 'move-node-to-workspace 1-Web'
+ctrl-alt-shift-2 = 'move-node-to-workspace 2-Code'
+ctrl-alt-shift-3 = 'move-node-to-workspace 3-Chat'
+ctrl-alt-shift-4 = 'move-node-to-workspace 4-Design'
+ctrl-alt-shift-5 = 'move-node-to-workspace 5-Other'
+ctrl-alt-h = 'focus left'
+ctrl-alt-j = 'focus down'
+ctrl-alt-k = 'focus up'
+ctrl-alt-l = 'focus right'
+ctrl-alt-shift-h = 'move left'
+ctrl-alt-shift-j = 'move down'
+ctrl-alt-shift-k = 'move up'
+ctrl-alt-shift-l = 'move right'
+ctrl-alt-left = 'focus-monitor left'
+ctrl-alt-right = 'focus-monitor right'
+ctrl-alt-shift-left = 'move-node-to-monitor --focus-follows-window left'
+ctrl-alt-shift-right = 'move-node-to-monitor --focus-follows-window right'
+ctrl-alt-minus = 'resize smart -50'
+ctrl-alt-equal = 'resize smart +50'
+ctrl-alt-slash = 'layout tiles horizontal vertical'
+ctrl-alt-comma = 'layout accordion horizontal vertical'
+ctrl-alt-f = 'fullscreen'
+ctrl-alt-shift-space = 'layout floating tiling'
+ctrl-alt-tab = 'workspace-back-and-forth'
+ctrl-alt-shift-r = 'reload-config'
+# Escape hatch: no shortcuts that close windows or kill applications.
+ctrl-alt-shift-esc = 'enable toggle'

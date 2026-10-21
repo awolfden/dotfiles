@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "excalidraw": {
+      "url": "https://mcp.excalidraw.com/mcp"
+    },
+    "granola": {
+      "url": "https://mcp.granola.ai/mcp",
+      "auth": "oauth"
+    },
+    "linear": {
+      "url": "https://mcp.linear.app/mcp",
+      "auth": "oauth"
+    },
+    "notion": {
+      "url": "https://mcp.notion.com/mcp",
+      "auth": "oauth"
+    }
+  }
+}

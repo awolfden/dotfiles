@@ -1,0 +1,10 @@
+# Preserve an explicitly selected JDK; otherwise use macOS's default if available.
+if [[ -z "${JAVA_HOME:-}" && -x /usr/libexec/java_home ]]; then
+  if _dotfiles_java_home=$(/usr/libexec/java_home 2>/dev/null); then
+    export JAVA_HOME="$_dotfiles_java_home"
+  fi
+  unset _dotfiles_java_home
+fi
+
+# Trusted machine-local environment; keep actual credentials in a credential store.
+[[ -r "$HOME/.zshenv.local" ]] && source "$HOME/.zshenv.local"

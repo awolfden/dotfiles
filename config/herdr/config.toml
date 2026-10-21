@@ -1,0 +1,22 @@
+onboarding = false
+# Herdr 0.9.0 pilot. No login service or automatic agent launches.
+# Preserve first-run notification onboarding.
+[theme]
+name = "dracula"
+
+auto_switch = false
+[terminal]
+default_shell = "/bin/zsh"
+shell_mode = "login"
+kitty_graphics = true
+
+[ui]
+copy_on_select = false
+
+[update]
+# Homebrew owns updates. Keep remote detector updates deliberate too.
+version_check = false
+manifest_check = false
+
+[ui.toast]
+delivery = "system"

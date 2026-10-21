@@ -1,0 +1,3 @@
+alias code="open -a 'Visual Studio Code' ."
+
+alias curd="open -a 'Cursor' ."
