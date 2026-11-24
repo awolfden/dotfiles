@@ -1,5 +1,17 @@
 # Skill sources and local dependencies
 
+## Standalone public packages
+
+[Loop Contract](https://github.com/awolfden/loop-contract) is the canonical source for the portable execution-contract skill. This repository references it rather than copying its instructions. The Pi package selection pins `v0.1.0`.
+
+```sh
+pi install git:github.com/awolfden/loop-contract@v0.1.0
+```
+
+After reviewing and installing the package, run `/reload` in Pi and invoke `/skill:loop-contract`. It drafts a bounded execution prompt; it does not execute the work or grant additional permissions. Its initial release has structural validation but no live model evaluation. Develop changes in the source repository, not Pi's managed checkout. Update the pinned reference deliberately after reviewing a new release.
+
+## Locally maintained bridges
+
 This checkout contains eight locally maintained bridges, not copies of entire upstream plugin distributions. The bridges state their source roots, reviewed revisions and file digests where applicable. Read the source gate before using a skill. Missing or changed sources must fail visibly; do not update hashes blindly or install dependencies during invocation.
 
 | Bridges | Existing source expected |
